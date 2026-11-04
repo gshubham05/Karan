@@ -1,5 +1,6 @@
 import React from "react";
 import { images, cars } from "../assets/data";
+import Cards from "./Cards";
 
 function Hero() {
   console.log(cars);
@@ -14,11 +15,7 @@ function Hero() {
       </div> */}
       <div className="flex justify-start items-center flex-wrap gap-4">
         {cars.map((obj, index) => (
-          <div className="h-[400px] w-[300px] shadow-md p-2">
-            <p className="font-bold text-center text-2xl">{obj.title}</p>
-            <img className="h-[70%] w-full" src={obj.img} alt="" />
-            <p>{obj.description}</p>
-          </div>
+          <Cards key={index} title={obj.title} img={obj.img} d = {obj.description} />
         ))}
       </div>
       {/* <div className="flex justify-center items-center gap-4">
